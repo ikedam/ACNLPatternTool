@@ -8,7 +8,7 @@
             <canvas class="fordrawing" ref="canvas3" width="64" height="64"/>
             <div class="pattern-info">
               <div class="pattern_title">{{patTitle}}</div>
-              <div class="pattern_author">by {{patAuthor}}</div> 
+              <div class="pattern_author">by {{patAuthor}}</div>
               <div class="pattern_town">from {{patTown}}</div>
               <div class="pattern_typename">{{patTypeName}}</div>
             </div><!-- pattern info -->
@@ -288,8 +288,8 @@
                       :value="s">
                       {{s}}
                     </option>
-                  </select> 
-                </div>   
+                  </select>
+                </div>
               </div>
               <div>
                 <input type="checkbox" value="Y" v-model="pubNSFW">This pattern is not appropriate for children</input>
@@ -552,13 +552,13 @@ export default {
       if (this.drawingTool.getPalette(currentColor) === color) return;
       this.drawingTool.pushUndo();
       this.drawingTool.setPalette(this.drawingTool.currentColor, color);
-      logger.info(`color picked: ${color}`);
+      console.log(`color picked: ${color}`);
     },
     onChangedCurrentColor: function(idx) {
       if (this.drawingTool.currentColor === idx) return;
       this.drawingTool.currentColor = idx;
       this.drawingTool.onColorChange();
-      logger.info(`changed current color: ${idx}`);
+      console.log(`changed current color: ${idx}`);
     },
     onLoad: async function(t){
       let patStr = this.drawingTool.toString();
